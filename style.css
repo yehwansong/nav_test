@@ -5,7 +5,7 @@
         overflow: hidden;
     }
     .alarm{    
-        position: absolute;
+        position: fixed;
         z-index: 100000000000000000;
         font-family: sans-serif;
         width: 90vw;

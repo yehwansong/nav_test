@@ -7,18 +7,16 @@
 	var okbutton = false
 	var okbutton_after = false
 	var waited = false
+
    $(document).ready(function(){
    	var ua = navigator.userAgent.toLowerCase();
 	var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-	if(isAndroid) {
-		alert('화면을 손가락으로 걷는 인터렉션은 아이폰에서만 지원되는 점 양해 부탁드립니다. 안드로이드폰에서는 공간을 걸어다니는 듯한 영상을 보실 수 있습니다.')
-		setTimeout(function(){
-		window.location.href = "index_an.html";
-
-		},1000)
-	}
+	// if(isAndroid) {
+	// }else{
+	// 	window.location.href = "index.html";
+	// }
 			var audio = document.getElementById('audio');
-
+			var video = document.getElementById('video');
    	$('.okbutton').click(function(){
    		okbutton = true
 		if(waited){
@@ -39,6 +37,11 @@
 			}
    		},0)
    	})
+
+
+
+
+
 	function intro_000(){
 		$('.loading_wrap').hide()
 		$('.intro_wrap').hide()
@@ -47,7 +50,7 @@
 		$('.text_wrap_000').show()
 					setTimeout(function(){
 						intro_0()
-					},3000)
+					},4000)
 	}
 	function intro_0(){
 		$('.intro_wrap').hide()
@@ -56,7 +59,7 @@
 		$('.text_wrap_0').show()
 					setTimeout(function(){
 						intro_1()
-					},1000)
+					},4000)
 	}
 	function intro_1(){
 		$('.text_wrap').hide()
@@ -73,7 +76,7 @@
 				console.log('-----------------')
 					setTimeout(function(){
 						intro_1_loop()
-					},1000)
+					},2000)
 			}else{
 				intro_2()
 			}
@@ -86,7 +89,7 @@
 		$('.intro_wrap_2').show()
 			setTimeout(function(){
 				intro_3()
-			},2500)
+			},3500)
 	}
 	function intro_3(){
 		console.log('intro_3')
@@ -137,7 +140,10 @@ next()
 
 	}
 	function next(){
+    $('#video').css({'opacity':1})
 		$('.loading_wrap').hide()
+			$('.greenroomlink').show()
+			$('.greenroomlink').css({'animation':'none'})
 					$('#wrapper').css({'opacity':'1'})
 					$('.intro_wrap').hide()
 					$('.text_wrap').hide()
@@ -145,6 +151,8 @@ next()
 					$('.listbutton_open').show()
 					$('.footprintbutton').show()
 					$('body').css({'pointer-events': 'auto'})
+					$('.intro_popup_2').show()
+					$('.intro_popup_3').show()
 
 	}
 	var prev_pos_x
@@ -182,7 +190,7 @@ var old_round = 0
     	var selected_printtype = 'footprint'
 		var rotation_archive = []
 		var listscrollcount = 0
-var unit = 15
+var unit = 16
 // $('#img').css({'background-size':100/unit+'% auto'})
 	var h = window.innerHeight
 	var w = window.innerWidth
@@ -228,23 +236,30 @@ var unit = 15
 
 		}
 		var effectword = [
-			['동굴', '구멍', '눈알'],
+			['동굴', '블랙홀', '눈알'],
 			['구슬', '반질반질', '영롱'],
 			['엿보는', '물방울', '어둠 속 풀숲'],
-			['까끌까끌', '스마일', '쾅! 쾅!', '건반', '계단'],
-			['보들보들', '쑥쑥 자라나는', '무럭무럭'],
-			['파스텔 무지개', '부들부들'],
-			['구슬', '반질반질', '영롱'],
-			['엿보는', '물방울', '어둠 속 풀숲'],
-			['까끌까끌', '스마일', '쾅! 쾅!', '건반', '계단'],
-			['보들보들', '쑥쑥 자라나는', '무럭무럭'],
-			['파스텔 무지개', '부들부들']
+			['꺼끌꺼끌', '쾅! 쾅!', '건반', '김'],
+			['보들보들', '쑥쑥 자라나는', '무럭무럭', '버섯'],
+			['사막', '양탄자', '부들부들'],
+
+			['이끼', '꺼끌꺼끌', '비밀의 문','성벽'],
+			['지하세계', '빨려들어가는', '터널'],
+			['초콜릿', '따끔따끔', '보석', '총알'],
+			['공작새', '도서관', '사각사각'],
+			['책', '색종이', '열정'],
+			['크루아상', '촤라락', '부채','최면'],
+
+			['꿈틀꿈틀', '마법구슬', '탱글탱글', '젤리'],
+			['흙', '가죽', '부들부들', '벌레'],
+			['콩콩콩콩', '개미떼','리듬','발자국'],
+			['얼룩말', '피아노', '횡단보도', '서커스'],
+			[''],
+			['시작','성큼성큼','차가움','탈출']
 		]
 		var wordshow_timeout
 		var effectword_show_count = 0
 		function effectword_show_loop(count){
-			console.log
-			console.log(effectword[count][effectword_show_count % effectword[count].length])
 			$('.listmessagebox').html(effectword[count][effectword_show_count % effectword[count].length])
 			$('.listmessagebox').css({'left':(count%2)*50 + 'vw'})
 			$('.listmessagebox').css({'top':(Math.floor(count/2)*50) + 'vw'})
@@ -265,7 +280,8 @@ var unit = 15
   		e.preventDefault();
 		down = true
 		if(okbutton_after){
-	    	audio.play();
+    			audio.play();
+    			video.play();
 	    }
     	if(listshow){
     		if(e.originalEvent.touches[0].clientX>(1-0.225)*w && e.originalEvent.touches[0].clientY<(0.225)*w){
@@ -297,7 +313,8 @@ var unit = 15
 				var wordcount = listscrollcount*6+3 - 1
 				effectword_show_loop(wordcount)
 			}else if(e.originalEvent.touches[0].clientX<0.5*w && 
-					e.originalEvent.touches[0].clientY>1*w && e.originalEvent.touches[0].clientY<1.5*w){
+					e.originalEvent.touches[0].clientY>1*w && e.originalEvent.touches[0].clientY<1.5*w &&
+					listscrollcount<2){
 				$('.listmessagebox').show()
 				var wordcount = listscrollcount*6+5 - 1
 				effectword_show_loop(wordcount)
@@ -321,13 +338,14 @@ var unit = 15
 		if(e.originalEvent.touches[0].clientX>(1-0.2)*w && e.originalEvent.touches[0].clientY<(0.2)*w && !listshow && !greenroom){
 			$('.list').show()
 			$('.listbutton_close').show()
+					$('.intro_popup_3').hide()
 			listshow = true
 			listscrollcount = 0
 					$('.list').css({'margin-top': '0vw'})
-			console.log('sad;lfkjasld;kfj;lakdsjfl;k')
 		}
     	if(!footshow&&e.originalEvent.touches[0].clientX>(1-0.4)*w &&e.originalEvent.touches[0].clientX<(1-0.2)*w && e.originalEvent.touches[0].clientY<(0.2)*w && !listshow){
 			$('.footprintbutton').addClass('footprint_activate')
+					$('.intro_popup_2').hide()
 			footshow=true
 			return false
     	}
@@ -358,20 +376,6 @@ var unit = 15
 				speedX = (currentX - startX)/counter
 				speedY = (currentY - startY)/counter
 				rotation = angle(startX,startY,currentX,currentY)
-				if(touchcounter%2 == 0 && resultY<11*w){
-				console.log(e.originalEvent.touches[e.originalEvent.touches.length-1].clientX+'px ' + e.originalEvent.touches[e.originalEvent.touches.length-1].clientY +'px')
-								$('#wrapper').css({'transform-origin':e.originalEvent.touches[e.originalEvent.touches.length-1].clientX+'px ' + e.originalEvent.touches[e.originalEvent.touches.length-1].clientY +'px'})
-								if(Math.floor((rotation-90)/10)*10 > 30){
-									rot_val = 30
-								}else if(Math.floor((rotation-90)/10)*10 < -30){
-									rot_val = -30
-								}else{
-									rot_val = Math.floor((rotation-90)/10)*10
-								}
-								if(!greenroom){
-									$('#wrapper').css({'transform':'rotate('+rot_val+'deg)'})
-								}
-							}
 				// }
 				counter = 0;
 				movingcounter = 0
@@ -384,57 +388,12 @@ var unit = 15
 				movingcounter = 0
 				startTime = timer_num
 			}
-			console.log(parseInt($('#img').css('marginTop'),10)>3360)
-			console.log(parseInt($('#img').css('marginTop'),10)<4320)
-		if(parseInt($('#img').css('marginTop'),10)>3360 && parseInt($('#img').css('marginTop'),10)<4320){
-			$('.greenroomlink').show()
-		}else{
-			$('.greenroomlink').hide()
-		}
-
+			var greenroomstart = true
 
 			startY =  e.originalEvent.touches[e.originalEvent.touches.length-1].clientY;
 			startX =  e.originalEvent.touches[e.originalEvent.touches.length-1].clientX;
 		}
 	function angle(x_1,y_1,x_2,y_2){ return Math.atan2(y_2 - y_1, x_2 - x_1) * 180 / Math.PI;}
-	})
-	$('body').on('touchmove', function(e) {
-  		e.preventDefault();
-		if(!listshow){
-			counter++
-			currentY = e.originalEvent.touches[e.originalEvent.touches.length-1].clientY;
-			currentX = e.originalEvent.touches[e.originalEvent.touches.length-1].clientX;
-			// round = Math.floor((total_margin_top + (currentY - startY))/(unit*w))
-			// if(!old_round == round){$('.footprint').remove()}
-			// old_round = round
-			if(speedX == 0){
-				if(total_margin_top + (currentY-startY)<0){
-					resultY =-1*(Math.abs(total_margin_top + (currentY - startY))%(unit*w))
-				}else{
-					resultY =(Math.abs(total_margin_top + (currentY - startY))%(unit*w))
-				}
-			}else{
-				if(total_margin_top + (currentY-startY)<0){
-					resultY =-1*(Math.abs(total_margin_top + (speedY*counter))%(unit*w))
-				}else{
-					resultY =(Math.abs(total_margin_top + (speedY*counter))%(unit*w ))
-				}
-			}
-			if(!greenroom){
-				     $('#img').css({'margin-top':resultY +'px'})
-				     $('#img_clone').css({'margin-top':resultY +'px'})
-				if(resultY>10*w){
-				     $('#img').css({'margin-left':-1*(resultY-10*w) +'px'})
-				     $('#img_clone').css({'margin-left':-1*(resultY-10*w) +'px'})
-					$('#wrapper').css({'transform':'rotate(0deg)'})
-				}else{
-				     $('#img').css({'margin-left':'0px'})
-				     $('#img_clone').css({'margin-left':'0px'})
-				}
-			}
-		     lastY = currentY;
-		     lastX = currentX;
-		}
 	})
 	$(window).on('resize', function(){
 		if(window.innerWidth > window.innerHeight){
@@ -448,7 +407,7 @@ var unit = 15
 		down = false
 		if(!listshow){
 			footprint_amount++
-			if(resultY>10*w){
+			if(resultY>11*w){
 				$('#img').append('<div class="footprint '+selected_printtype+'"  style="transform: translate(-50%, -50%) rotate(45deg); left:'+(lastX - parseInt($('#img').css('marginLeft')) + w)+'px; top:'+( -1*parseInt($('#img').css('top'))-1*parseInt($('#img').css('marginTop'))+lastY) +'px;"></div>')
 
 			}else{
@@ -489,7 +448,7 @@ $(document).ready(function(){
 		$('.greenroomout').show()
 		greenroom = true
 		setTimeout(function(){
-			if($('canvas').length == 0){
+			$('canvas').remove();
 
 						var char_name
 					    var Engine = Matter.Engine,
@@ -741,18 +700,6 @@ $(document).ready(function(){
 							$('.greenroomout').hide()
 							$('canvas').css({'pointer-events':'none'})
 					})
-			}else{
-				greenroom = true
-				$('canvas').show()
-				$('canvas').css({'pointer-events':'auto'})
-				$('.greenroomout').click(function(){
-							$('.door').removeClass('greenroomon')
-							greenroom = false
-							$('canvas').hide()
-							$('.greenroomout').hide()
-							$('canvas').css({'pointer-events':'none'})
-					})
-				}
 		},1000)
 	})
 })
