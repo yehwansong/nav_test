@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta 
+     name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
+/>
+    <script type="text/javascript">
+        
+var isMobile = false; //initiate as false
+// device detection
+if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+    isMobile = true;
+}
+if(!isMobile){
+    alert('This page only works on mobile devices.')
+}
+    </script>
+</head>
+<body>
+    <div class='loading_wrap'>
+       <img class="loading" src="intro/sand.png">
+       <img class="text_wrap text_wrap_loading" src="intro/text-04.png">
+   </div>
+    <div class="alarm">
+        서울시립 북서울미술관 <물체주머니> 연계 프로그램 <신비한 물체들이 주머니 속에 있었어> 아카이브 사이트 입니다.<br>
+        본 홈페이지는 전시 기간 동안 진행하는 연계 프로그램으로 제작되었으며, 웹접근성 및 웹표준에 적합하게 제작되어 있지 않습니다.<br>
+        모바일 및 태블릿에 최적화되어 있습니다.<br>
+        <div class="okbutton">확인</div>
+    </div>
+
+<audio autoplay loop  id="audio">
+    <source src="sound.mp3">
+</audio>
+    <img src="img/door.svg" class="door">
+    <a class="greenroomlink button"></a>
+    <img src="intro/button-01.svg" class="listbutton listbutton_open button">
+    <img src="intro/button-04-02.svg" class="footprintbutton_1 footprintbutton button">
+    <img src="intro/button-04-01.svg" class="footprintbutton_2 footprintbutton button">
+    <img src="intro/button-04-03.svg" class="footprintbutton_3 footprintbutton button">
+    <div class="list">
+        <div class="listmessagebox"></div>
+        <img src="icon/icon-02.png" class="list_icon">
+        <img src="icon/icon-03.png" class="list_icon">
+        <img src="icon/icon-04.png" class="list_icon">
+        <img src="icon/icon-05.png" class="list_icon">
+        <img src="icon/icon-06.png" class="list_icon">
+        <img src="icon/icon-07.png" class="list_icon">
+        <img src="icon/icon-08.png" class="list_icon">
+        <img src="icon/icon-09.png" class="list_icon">
+        <img src="icon/icon-10.png" class="list_icon">
+        <img src="icon/icon-11.png" class="list_icon">
+        <img src="icon/icon-12.png" class="list_icon">
+        <img src="icon/icon-13.png" class="list_icon">
+        <img src="icon/icon-14.png" class="list_icon">
+        <img src="icon/icon-15.png" class="list_icon">
+        <img src="icon/icon-16.png" class="list_icon">
+        <img src="icon/icon-17.png" class="list_icon">
+        <img src="icon/icon-18.png" class="list_icon">
+        <img src="icon/icon-19.png" class="list_icon">
+        <img src="img/arrow-01.png" class="listarrow listarrow_up">
+        <img src="img/arrow-01.png" class="listarrow listarrow_down">
+    </div>
+    <img src="intro/button-03.svg" class="listbutton listbutton_close button"> 
+    <div class="intro_wrap intro_wrap_000">
+       <img class="text_wrap text_wrap_000" src="intro/text-04.png">
+    </div>
+    <div class="intro_wrap intro_wrap_0">
+       <img class="text_wrap text_wrap_0" src="intro/text-05.png">
+    </div>
+    <div class="intro_wrap intro_wrap_1">
+       <img class="text_wrap text_wrap_1" src="intro/text-01.png">
+       <div class="wait img img_1"></div>
+       <div class="wait img img_2" ></div>
+       <div class="wait img img_3"></div>
+       <div class="wait img img_4" ></div>
+        <div></div>
+    </div>
+    <div class="intro_wrap intro_wrap_2">
+       <img class="text_wrap text_wrap_2" src="intro/text-02.png">
+       <img class="img phone_img" src="intro/phone.svg">
+    </div>
+    <div class="intro_wrap intro_wrap_3">
+       <img class="text_wrap text_wrap_3" src='intro/text-03.png'>
+        <div class="wait img img_1" ></div>
+        <div class="wait img img_2" ></div>
+        <div class="wait img img_3" ></div>
+        <div class="wait img img_4" ></div>
+        <div class="wait img img_5" ></div>
+        <div class="wait img img_6" ></div>
+        <div class="wait img img_7" ></div>
+        <div class="wait img img_8" ></div>
+        <div class="wait img img_9" ></div>
+        <div class="wait img img_10"></div>
+        <div class="wait img img_11"></div>
+        <div class="wait img img_12"></div>
+        <div class="wait img img_13"></div>
+    </div>
+    <div class="intro_wrap intro_wrap_4">
+       <img class="text_wrap text_wrap_4" src='intro/text-07.png'>
+    </div>
+    <div id="overlay"></div>
+    <div id="wrapper">
+        <div id='img' class="wait">
+            <div class="interaction_unit interaction_unit_1">
+                <div class="dia" class="wait"></div>
+                <div class="shelf_wrapper" class="wait">
+                    <div class="shelf shelf_1"></div>
+                    <div class="shelf shelf_2"></div>
+                    <div class="shelf shelf_3"></div>
+                    <div class="shelf shelf_4"></div>
+                    <div class="shelf shelf_5"></div>
+                    <div class="shelf shelf_6"></div>
+                    <div class="shelf shelf_7"></div>
+                    <div class="shelf shelf_8"></div>
+                    <div class="shelf shelf_9"></div>
+                    <div class="shelf shelf_10"></div>
+                    <div class="shelf shelf_11"></div>
+                    <div class="shelf shelf_12"></div>
+                    <div class="shelf shelf_13"></div>
+                    <div class="shelf shelf_14"></div>
+                    <div class="shelf shelf_15"></div>
+                    <div class="shelf shelf_16"></div>
+                    <div class="shelf shelf_17"></div>
+                    <div class="shelf shelf_18"></div>
+                    <div class="shelf shelf_19"></div>
+                    <div class="shelf shelf_20"></div>
+                    <div class="shelf shelf_21"></div>
+                    <div class="shelf shelf_22"></div>
+                    <div class="shelf shelf_23"></div>
+                    <div class="shelf shelf_24"></div>
+                    <div class="shelf shelf_25"></div>
+                    <div class="shelf shelf_26"></div>
+                    <div class="shelf shelf_27"></div>
+                </div>
+                <div class="mar_wrapper mar_wrapper_1 mar_wrapper_1-1" class="wait">
+                    <div class="mar mar_1"></div>
+                    <div class="mar mar_2"></div>
+                    <div class="mar mar_3"></div>
+                    <div class="mar mar_4"></div>
+                    <div class="mar mar_5"></div>
+                    <div class="mar mar_6"></div>
+                    <div class="mar mar_7"></div>
+                    <div class="mar mar_8"></div>
+                    <div class="mar mar_9"></div>
+                    <div class="mar mar_10"></div>
+                    <div class="mar mar_11"></div>
+                    <div class="mar mar_12"></div>
+                    <div class="mar mar_13"></div>
+                    <div class="mar mar_14"></div>
+                    <div class="mar mar_15"></div>
+                    <div class="mar mar_16"></div>
+                    <div class="mar mar_17"></div>
+                    <div class="mar mar_18"></div>
+                    <div class="mar mar_19"></div>
+                    <div class="mar mar_20"></div>
+                </div>
+                <div class="mar_wrapper mar_wrapper_1 mar_wrapper_1-2" class="wait">
+                    <div class="mar mar_1"></div>
+                    <div class="mar mar_2"></div>
+                    <div class="mar mar_3"></div>
+                    <div class="mar mar_4"></div>
+                    <div class="mar mar_5"></div>
+                    <div class="mar mar_6"></div>
+                    <div class="mar mar_7"></div>
+                    <div class="mar mar_8"></div>
+                    <div class="mar mar_9"></div>
+                    <div class="mar mar_10"></div>
+                    <div class="mar mar_11"></div>
+                    <div class="mar mar_12"></div>
+                    <div class="mar mar_13"></div>
+                    <div class="mar mar_14"></div>
+                    <div class="mar mar_15"></div>
+                    <div class="mar mar_16"></div>
+                    <div class="mar mar_17"></div>
+                    <div class="mar mar_18"></div>
+                    <div class="mar mar_19"></div>
+                    <div class="mar mar_20"></div>
+                </div>
+                <div class="mar_wrapper mar_wrapper_1 mar_wrapper_1-3" class="wait">
+                    <div class="mar mar_1"></div>
+                    <div class="mar mar_2"></div>
+                    <div class="mar mar_3"></div>
+                    <div class="mar mar_4"></div>
+                    <div class="mar mar_5"></div>
+                    <div class="mar mar_6"></div>
+                    <div class="mar mar_7"></div>
+                    <div class="mar mar_8"></div>
+                    <div class="mar mar_9"></div>
+                    <div class="mar mar_10"></div>
+                    <div class="mar mar_11"></div>
+                    <div class="mar mar_12"></div>
+                    <div class="mar mar_13"></div>
+                    <div class="mar mar_14"></div>
+                    <div class="mar mar_15"></div>
+                    <div class="mar mar_16"></div>
+                    <div class="mar mar_17"></div>
+                    <div class="mar mar_18"></div>
+                    <div class="mar mar_19"></div>
+                    <div class="mar mar_20"></div>
+                </div>
+                <div class="mar_wrapper mar_wrapper_2 mar_wrapper_2-1" class="wait">
+                    <div class="mar mar_9"></div>
+                    <div class="mar mar_10"></div>
+                    <div class="mar mar_11"></div>
+                    <div class="mar mar_12"></div>
+                    <div class="mar mar_13"></div>
+                    <div class="mar mar_14"></div>
+                    <div class="mar mar_15"></div>
+                    <div class="mar mar_16"></div>
+                    <div class="mar mar_17"></div>
+                    <div class="mar mar_18"></div>
+                    <div class="mar mar_19"></div>
+                    <div class="mar mar_20"></div>
+                </div>
+                    <!-- <div class="greenroom"></div> -->
+                    <div class="greenroom greenroom_w"></div>
+                    <div class="ball ball_1"></div>
+                    <div class="ball ball_2"></div>
+                    <div class="ball ball_3"></div>
+                    <div class="ball ball_4"></div>
+                    <div class="ball ball_5"></div>
+                    <div class="ball ball_6"></div>
+                    <div class="ball ball_7"></div>
+                    <div class="gold gold_1"></div>
+                    <div class="gold gold_2"></div>
+                    <div class="gold gold_3"></div>
+                    <div class="gold gold_4"></div>
+                    <div class="stair stair_1"></div>
+                    <div class="stair stair_2"></div>
+                    <div class="stair stair_3"></div>
+                    <div class="tri tri_1"></div>
+                    <div class="tri tri_2"></div>
+                    <div class="tri tri_3"></div>
+                    <div class="sharpdia sharpdia_1"></div>
+                    <div class="sharpdia sharpdia_2"></div>
+                    <div class="sharpdia sharpdia_3"></div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper_clone">
+        <div id='img_clone'>
+        </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery.waitforimages.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.11.0/matter.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
